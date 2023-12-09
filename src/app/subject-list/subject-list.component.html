@@ -1,0 +1,7 @@
+<label for="subject-search">Search for a subject</label>
+<input id="subject-search" #search placeholder="Ex: Aerodynamics" type="text">
+<button (click)="searchAerospaceSubjects(search.value)">Search</button>
+<article *ngFor="let subject of results">
+  <p>{{subject.name}}</p>
+  <button (click)="selectAerospaceSubject(subject)">View</button>
+</article>
