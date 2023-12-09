@@ -1,6 +1,7 @@
 {
   "name": "aerospace-gria",
   "version": "0.0.0",
+  "description": "A home of Aerospace science",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
