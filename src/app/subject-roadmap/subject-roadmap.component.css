@@ -1,0 +1,54 @@
+/* styles.css (or the stylesheet for app-subject-roadmap component) */
+
+.two-column-container {
+  display: flex;
+}
+
+.roadmap-column {
+  width: 30%;
+}
+
+.roadmap-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.roadmap-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  /* Style for the current step */
+  background-color: #e0e0e0;
+}
+
+button {
+  margin-top: 10px;
+}
+
+
+.navigation-buttons {
+  margin-top: 10px;
+}
+
+.article-column {
+  flex: 1;
+  padding: 20px;
+  border-left: 1px solid #ddd; /* Add a border between the columns */
+}

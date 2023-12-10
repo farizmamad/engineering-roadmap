@@ -1,7 +1,25 @@
-<div *ngIf="subject" class="roadmap-container">
-  <h2>{{ subject.name }} Roadmap</h2>
-  <ol>
-    <li *ngFor="let step of subject.roadmap">{{ step }}</li>
-  </ol>
-  <button (click)="goBack()">Back to Subject List</button>
+<button (click)="goBack()">Back to Subject List</button>
+<div *ngIf="subject" class="two-column-container">
+  <div class="roadmap-column">
+    <h2>{{ subject.name }} Roadmap</h2>
+    <div  class="roadmap-container">
+      <div *ngFor="let item of subject?.roadmap; let i = index" class="roadmap-item" [ngClass]="{'active': currentStep === i}" (click)="setActiveStep(i)">
+        <div class="dot"></div>
+        <div class="content">
+          <h3>{{ item }}</h3>
+        </div>
+      </div>
+    
+      <div class="navigation-buttons">
+        <button (click)="prevStep()" [disabled]="currentStep === 0">Previous</button>
+        <button (click)="nextStep()" [disabled]="currentStep === subject.roadmap.length - 1">Next</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="article-column">
+    <h2>{{ subject.roadmap[currentStep] }}</h2>
+    <p>{{ subject.roadmap[currentStep] }}</p>
+  </div>
 </div>
+

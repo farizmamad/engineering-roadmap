@@ -10,6 +10,7 @@ import { Subject } from '../subject.model';
 })
 export class SubjectRoadmapComponent implements OnInit {
   subject: Subject | undefined;
+  currentStep = 0;
 
   constructor(private route: ActivatedRoute, private router: Router, private subjectService: SubjectService) {}
 
@@ -22,6 +23,23 @@ export class SubjectRoadmapComponent implements OnInit {
     } else if (name) {
       this.subject = this.subjectService.getSubjectByName(name);
     }
+  }
+
+  nextStep() {
+    if (!this.subject?.roadmap?.length) return;
+    if (this.currentStep < this.subject?.roadmap.length - 1) {
+      this.currentStep++;
+    }
+  }
+
+  prevStep() {
+    if (this.currentStep > 0) {
+      this.currentStep--;
+    }
+  }
+
+  setActiveStep(index: number) {
+    this.currentStep = index;
   }
 
   goBack(): void {
