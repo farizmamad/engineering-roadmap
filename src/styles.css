@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css (or your global styles file) */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif; /* Replace 'Your Modern Font' with the desired font */
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  flex: 1;
+  display: flex; /* Add this line */
+  flex-direction: column; /* Add this line */
+}
+
+app-subject-roadmap {
+  padding: 20px; /* Adjust the padding value according to your preference */
+}
+
+.app-header {
+  background-color: #333;
+  color: white;
+  padding: 40px;
+  text-align: left;
+}
+
+.app-header i {
+  font-size: 24px;
+}
+
+.app-header h1 {
+  display: inline-block;
+  font-size: 40px;
+  margin: 0;
+}
+
+.app-header p {
+  margin: 10px 0; /* Add margin to the tagline for spacing */
+}
+
+.app-footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+}

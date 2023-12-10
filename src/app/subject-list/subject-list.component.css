@@ -1,39 +1,23 @@
-input, button {
-  border: solid .5px #555B6E;
-  border-radius: 2px;
+.subject-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-input, button {
-  display: inline-block;
-  height: 40px;
-}
-
-input {
-  margin: 0 5px 0 2px;
-  width: 200px;
-  padding-left: 8px;
-}
-
-button {
-  height: 43px;
-  width: 70px;
-}
-
-article {
-  margin: 40px 0 10px 0;
+.subject-card {
+  width: calc(33.33% - 20px); /* 20px is the total horizontal margin between cards */
+  margin: 10px;
   padding: 15px;
+  border: 1px solid #ddd; /* Visible border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional box shadow for a subtle effect */
+  box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
 }
 
-article> p:first-of-type {
-  font-weight: bold;
-  font-size: 22pt;
+.subject-card h2 {
+  margin-bottom: 10px;
 }
 
-img {
-  width: 200px;
-  border-radius: 10pt;
-}
-
-label {
+.subject-card a {
   display: block;
+  margin-top: 10px;
 }

@@ -1,0 +1,7 @@
+<div *ngIf="subject" class="roadmap-container">
+  <h2>{{ subject.name }} Roadmap</h2>
+  <ol>
+    <li *ngFor="let step of subject.roadmap">{{ step }}</li>
+  </ol>
+  <button (click)="goBack()">Back to Subject List</button>
+</div>

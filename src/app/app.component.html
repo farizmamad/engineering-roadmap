@@ -1,15 +1,12 @@
-<main>
-  <header>
-    <img src="" alt="aerospace-gria">Aerospace Gria
-  </header>
-  <section>
-    <app-subject-list [subjectList]="aerospaceSubjectList" (selectedSubjectEvent)="updateSelectedSubject($event)"></app-subject-list>
-  </section>
-  <article>
-    <ng-container *ngIf="selectedSubject">
-      <img [src]="selectedSubject.icon" [alt]="selectedSubject.name">
-      <p>{{selectedSubject.name}}</p>
-      <p>{{selectedSubject.description}}</p>
-    </ng-container>
-  </article>
-</main>
+<div class="app-header">
+  <i class="fa fa-plane"></i>
+  <h1>Aerospace Engineering Roadmap</h1>
+  <p>Walkthrough the learning path of aerospace subjects</p>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="app-footer">
+  <p>{{ 'Aerospace Gria by @farizmamad' }}</p>
+  <p>Grow by community contribution</p>
+</div>
