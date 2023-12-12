@@ -1,7 +1,7 @@
 # aerospace-engineering-roadmap
 Walkthrough the learning path of aerospace subjects.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
 
 You can contribute and test your changes by following this steps.
 
