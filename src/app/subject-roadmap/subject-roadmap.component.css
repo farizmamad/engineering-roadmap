@@ -11,7 +11,7 @@
 .roadmap-container {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .roadmap-item {
@@ -44,7 +44,7 @@ button {
 
 
 .navigation-buttons {
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .article-column {
