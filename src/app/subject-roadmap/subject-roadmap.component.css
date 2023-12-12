@@ -1,54 +1,74 @@
-/* styles.css (or the stylesheet for app-subject-roadmap component) */
+/* Add this CSS to your existing stylesheet or create a new one */
 
 .two-column-container {
   display: flex;
+  flex-direction: column; /* Display as a column on small screens (default) */
 }
 
-.roadmap-column {
-  width: 30%;
+/* Media Query for screens wider than 600px (adjust the value as needed) */
+@media screen and (min-width: 600px) {
+  .two-column-container {
+    flex-direction: row; /* Display as a row on larger screens */
+  }
+}
+
+.roadmap-column,
+.article-column {
+  width: 100%; /* Take full width by default */
+}
+
+/* Media Query for screens wider than 600px (adjust the value as needed) */
+@media screen and (min-width: 600px) {
+  .roadmap-column {
+    width: 30%; /* Adjust the width for desktop */
+  }
+
+  .article-column {
+    width: 70%; /* Adjust the width for desktop */
+  }
 }
 
 .roadmap-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+}
+
+.navigation-buttons {
+  margin-bottom: 20px;
+}
+
+.navigation-buttons button {
+  margin-right: 10px;
 }
 
 .roadmap-item {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .dot {
   width: 20px;
   height: 20px;
-  background-color: #333;
+  background-color: #3498db; /* Change the color as needed */
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+}
+
+h2, h3 {
+  color: #333; /* Change the color as needed */
 }
 
 .active {
-  /* Style for the current step */
-  background-color: #e0e0e0;
+  background-color: #3498db; /* Change the color for the active item */
+  color: #fff; /* Change the text color for the active item */
 }
 
-button {
-  margin-top: 10px;
-}
-
-
-.navigation-buttons {
-  margin-bottom: 10px;
-}
-
-.article-column {
-  flex: 1;
-  padding: 20px;
-  border-left: 1px solid #ddd; /* Add a border between the columns */
+.article-column img {
+  max-width: 100%; /* Ensure images don't overflow their container */
 }
