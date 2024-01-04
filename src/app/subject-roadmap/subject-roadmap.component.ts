@@ -25,6 +25,14 @@ export class SubjectRoadmapComponent implements OnInit {
     }
   }
 
+  onLoad(event: string) {
+    console.log(event);
+  }
+
+  onError(event: string | Error) {
+    console.log(event);
+  }
+
   nextStep() {
     if (!this.subject?.roadmap?.length) return;
     if (this.currentStep < this.subject?.roadmap.length - 1) {

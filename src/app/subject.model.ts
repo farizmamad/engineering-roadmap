@@ -8,7 +8,8 @@ export interface Subject {
 export interface RoadmapItem {
   title: string;
   contributors: string[];
-  body: RoadmapBodyItem[];
+  markdownUrl?: string;
+  body?: RoadmapBodyItem[];
 }
 
 export interface RoadmapBodyItem {

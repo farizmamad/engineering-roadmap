@@ -277,20 +277,12 @@ export class SubjectService {
     {
       id: 5,
       name: 'Control Systems',
-      excerpt: 'Demystify control systems—understand the technology that ensures stable and precise navigation for aircraft.',
+      excerpt: 'Understand the technology that ensures stable and precise navigation for aircraft.',
       roadmap: [
         {
           title: 'Introduction to control theory.',
-          contributors: ['Contributor 1'],
-          body: [
-            {
-              text: 'Overview of the subject.',
-            },
-            {
-              text: 'Importance in aerospace engineering.',
-            },
-            // Add more items as needed
-          ],
+          contributors: ['Ahmad Fariz'],
+          markdownUrl: 'assets/control-systems/introduction-to-control-theory.md',
         },
         {
           title: 'Basics of feedback systems.',

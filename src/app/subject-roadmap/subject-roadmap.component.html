@@ -19,12 +19,17 @@
   
   <div class="article-column">
     <h2>{{ subject.roadmap[currentStep].title }}</h2>
-    <p *ngIf="subject.roadmap[currentStep].contributors.length">{{ subject.roadmap[currentStep].contributors.join(', ') }}</p>
-    <div *ngFor="let body of subject.roadmap[currentStep].body">
+    <!-- <p *ngIf="subject.roadmap[currentStep].contributors.length">{{ subject.roadmap[currentStep].contributors.join(', ') }}</p> -->
+    <div markdown *ngIf="subject.roadmap[currentStep].markdownUrl"
+      [src]="subject.roadmap[currentStep].markdownUrl"
+      (load)="onLoad($event)"
+      (error)="onError($event)">
+    </div>
+    <!-- <div *ngFor="let body of subject.roadmap[currentStep].body">
       <h3 *ngIf="body.subheader">{{ body.subheader }}</h3>
       <p *ngIf="body.text">{{ body.text }}</p>
       <img *ngIf="body.image" [src]="body.image" />
-    </div>
+    </div> -->
   </div>
 </div>
 
