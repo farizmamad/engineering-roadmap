@@ -285,17 +285,9 @@ export class SubjectService {
           markdownUrl: 'assets/control-systems/introduction-to-control-theory.md',
         },
         {
-          title: 'Basics of feedback systems.',
-          contributors: ['Contributor 2'],
-          body: [
-            {
-              text: 'Understanding feedback systems.',
-            },
-            {
-              text: 'Components of a feedback loop.',
-            },
-            // Add more items as needed
-          ],
+          title: 'Definition of control system.',
+          contributors: ['Ahmad Fariz'],
+          markdownUrl: 'assets/control-systems/definition-of-control-system.md',
         },
         {
           title: 'PID controllers and stability.',

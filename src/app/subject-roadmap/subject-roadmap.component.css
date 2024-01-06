@@ -28,6 +28,12 @@
   }
 }
 
+.article-column {
+  padding: 0 10%;
+  text-align: justify;
+  line-height: 150%;
+}
+
 .roadmap-container {
   display: flex;
   flex-direction: column;
