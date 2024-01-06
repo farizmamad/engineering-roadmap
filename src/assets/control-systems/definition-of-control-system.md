@@ -1,0 +1,5 @@
+by [Ahmad Fariz](https://linkedin.com/in/ahmadfariz)
+
+This article refers to the [Control Theory tutorial written by S. Simrock](https://cds.cern.ch/record/1100534/files/p73.pdf) from DESY, Hamburg, Germany.
+
+Control system is a system that consists of the **plant**, the **sensor**, and the **closed-loop system**. The plant is the part to be controlled. The sensor measures the variable or signal of the plant. The closed-loop system is a system that sends forces a.k.a input to the plant, in which the input value determined by certain system output a.k.a responses. Two types of control system are **regulator** and **servo mechanism**. Regulator system maintains a physical variable at some constant value in the presence of perturbances. Servo mechanism drive a physical variable to track some desired time function value.
