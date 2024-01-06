@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { SubjectService } from '../subject.service';
 import { Subject } from '../subject.model';
 
@@ -38,12 +38,14 @@ export class SubjectRoadmapComponent implements OnInit {
     if (this.currentStep < this.subject?.roadmap.length - 1) {
       this.currentStep++;
     }
+    this.setQueryParam('title');
   }
 
   prevStep() {
     if (this.currentStep > 0) {
       this.currentStep--;
     }
+    this.setQueryParam('title');
   }
 
   setActiveStep(index: number) {
@@ -52,5 +54,16 @@ export class SubjectRoadmapComponent implements OnInit {
 
   goBack(): void {
     this.router.navigate(['/']); // Navigate to the Subject List page
+  }
+
+  private setQueryParam(paramName: string) {
+    if (this.subject?.roadmap && this.currentStep && this.subject?.roadmap[this.currentStep]?.title) {
+      const queryParams: Params = { [paramName]: this.subject.roadmap[this.currentStep].title };
+      this.router.navigate([], {
+        relativeTo: this.route,
+        queryParams,
+        queryParamsHandling: 'merge',
+      });
+    }
   }
 }

@@ -276,7 +276,7 @@ export class SubjectService {
     },
     {
       id: 5,
-      name: 'Control Systems',
+      name: 'Control Systems [NEW UPDATE]',
       excerpt: 'Understand the technology that ensures stable and precise navigation for aircraft.',
       roadmap: [
         {
@@ -290,47 +290,24 @@ export class SubjectService {
           markdownUrl: 'assets/control-systems/definition-of-control-system.md',
         },
         {
-          title: 'PID controllers and stability.',
+          title: 'Linear Control Design',
           contributors: ['Contributor 3'],
-          body: [
-            {
-              text: 'Exploring PID controllers.',
-            },
-            {
-              text: 'Stability analysis.',
-            },
-            // Add more items as needed
-          ],
         },
         {
-          title: 'Introduction to modern control techniques.',
+          title: 'System Identitfication',
           contributors: ['Contributor 4'],
-          body: [
-            {
-              text: 'Overview of modern control techniques.',
-            },
-            // Add more items as needed
-          ],
         },
         {
-          title: 'Advanced control system design.',
+          title: 'Non-linear Feedback System Analysis',
           contributors: ['Contributor 5'],
-          body: [
-            {
-              text: 'Designing advanced control systems.',
-            },
-            // Add more items as needed
-          ],
+        },
+        {
+          title: 'Non-linear Control',
+          contributors: ['Contributor 5'],
         },
         {
           title: 'Application in aerospace systems.',
           contributors: ['Contributor 6'],
-          body: [
-            {
-              text: 'Applying control systems in aerospace.',
-            },
-            // Add more items as needed
-          ],
         },
       ],
     },
