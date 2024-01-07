@@ -290,6 +290,11 @@ export class SubjectService {
           markdownUrl: 'assets/control-systems/definition-of-control-system.md',
         },
         {
+          title: 'Model of Dynamic Systems',
+          contributors: ['Ahmad Fariz'],
+          markdownUrl: 'assets/control-systems/model-of-dynamics-system.md',
+        },
+        {
           title: 'Linear Control Design',
           contributors: ['Contributor 3'],
         },
