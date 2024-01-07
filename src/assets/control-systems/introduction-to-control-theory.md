@@ -8,7 +8,7 @@ If we dive into the linear control design methods, the transform methods emphasi
 
 The non-linear control is dealing with non-linear systems. Generally speaking, non-linear problems are difficult to solve and less understandable than linear problems. Shortly, the non-linear systems do not follow the superposition principle, may have multiple isolated equilibrium points, and may exhibit properties such as limit-cycle, bifurcation, and chaos.
 
-The techniques for analyzing non-linear feedback systems presented in this article are: 
+### The techniques for analyzing non-linear feedback systems presented in this article are: 
 * Describing function method
 * Phase plane method
 * Lyapunov stability analysis
@@ -18,11 +18,11 @@ The techniques for analyzing non-linear feedback systems presented in this artic
 * Small-gain theorem
 * Passivity analysis
 
-The techniques for designing the non-linear system control emphasized in this article are:
+### The techniques for designing the non-linear system control emphasized in this article are:
 * Gain scheduling
 * Adaptive control
 
-There are some auxiliary techniques introduced to treat non-linear feedback as linear for the purpose of control design, which are:
+### There are some auxiliary techniques introduced to treat non-linear feedback as linear for the purpose of control design, which are:
 * Feedback linearization
 * Lyapunov based methods
 * Lyapunov redesign
