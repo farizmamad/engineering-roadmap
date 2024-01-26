@@ -1,5 +1,6 @@
 export interface Subject {
   id: number;
+  slug: string;
   name: string;
   excerpt: string;
   roadmap: RoadmapItem[];

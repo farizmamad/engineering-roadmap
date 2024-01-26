@@ -7,8 +7,15 @@ import { SubjectRoadmapComponent } from './subject-roadmap/subject-roadmap.compo
 
 const routes: Routes = [
   { path: '', component: SubjectListComponent },
-  { path: 'roadmap/:name', component: SubjectRoadmapComponent },
-  { path: 'roadmap/:id', component: SubjectRoadmapComponent },
+  {
+    path: 'roadmap',
+    children: [
+      { path: ':slug', component: SubjectRoadmapComponent },
+      { path: ':name', component: SubjectRoadmapComponent },
+      { path: ':id', component: SubjectRoadmapComponent },
+
+    ]
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
