@@ -6,8 +6,53 @@ import { Subject } from './subject.model';
 })
 export class SubjectService {
   private subjects: Subject[] = [
+
+    {
+      id: 5,
+      slug: 'control-systems',
+      name: 'Control Systems [NEW UPDATE]',
+      excerpt: 'Understand the technology that ensures stable and precise navigation for aircraft.',
+      roadmap: [
+        {
+          title: 'Introduction to control theory.',
+          contributors: ['Ahmad Fariz'],
+          markdownUrl: 'assets/control-systems/introduction-to-control-theory.md',
+        },
+        {
+          title: 'Definition of control system.',
+          contributors: ['Ahmad Fariz'],
+          markdownUrl: 'assets/control-systems/definition-of-control-system.md',
+        },
+        {
+          title: 'Model of Dynamic Systems',
+          contributors: ['Ahmad Fariz'],
+          markdownUrl: 'assets/control-systems/model-of-dynamics-system.md',
+        },
+        {
+          title: 'Linear Control Design',
+          contributors: ['Contributor 3'],
+        },
+        {
+          title: 'System Identitfication',
+          contributors: ['Contributor 4'],
+        },
+        {
+          title: 'Non-linear Feedback System Analysis',
+          contributors: ['Contributor 5'],
+        },
+        {
+          title: 'Non-linear Control',
+          contributors: ['Contributor 5'],
+        },
+        {
+          title: 'Application in aerospace systems.',
+          contributors: ['Contributor 6'],
+        },
+      ],
+    },
     {
       id: 1,
+      slug: 'aerodynamics',
       name: 'Aerodynamics',
       excerpt: 'Explore the basics of aerodynamics—how air and objects work together to make flight possible.',
       roadmap: [
@@ -75,6 +120,7 @@ export class SubjectService {
     },
     {
       id: 2,
+      slug: 'lightweight-structure',
       name: 'Lightweight Structure',
       excerpt: 'Understand the principles behind lightweight structures, crucial for creating efficient and strong frameworks in aerospace engineering.',
       roadmap: [
@@ -142,6 +188,7 @@ export class SubjectService {
     },
     {
       id: 3,
+      slug: 'flight-performance',
       name: 'Flight Performance',
       excerpt: 'Learn the essentials of flight performance—maximizing speed, range, and fuel efficiency for safer and more efficient air travel.',
       roadmap: [
@@ -209,6 +256,7 @@ export class SubjectService {
     },
     {
       id: 4,
+      slug: 'flight-dynamics',
       name: 'Flight Dynamics',
       excerpt: 'Dive into the mechanics of flight dynamics—unraveling the complexities of aircraft motion and control systems.',
       roadmap: [
@@ -275,49 +323,8 @@ export class SubjectService {
       ],
     },
     {
-      id: 5,
-      name: 'Control Systems [NEW UPDATE]',
-      excerpt: 'Understand the technology that ensures stable and precise navigation for aircraft.',
-      roadmap: [
-        {
-          title: 'Introduction to control theory.',
-          contributors: ['Ahmad Fariz'],
-          markdownUrl: 'assets/control-systems/introduction-to-control-theory.md',
-        },
-        {
-          title: 'Definition of control system.',
-          contributors: ['Ahmad Fariz'],
-          markdownUrl: 'assets/control-systems/definition-of-control-system.md',
-        },
-        {
-          title: 'Model of Dynamic Systems',
-          contributors: ['Ahmad Fariz'],
-          markdownUrl: 'assets/control-systems/model-of-dynamics-system.md',
-        },
-        {
-          title: 'Linear Control Design',
-          contributors: ['Contributor 3'],
-        },
-        {
-          title: 'System Identitfication',
-          contributors: ['Contributor 4'],
-        },
-        {
-          title: 'Non-linear Feedback System Analysis',
-          contributors: ['Contributor 5'],
-        },
-        {
-          title: 'Non-linear Control',
-          contributors: ['Contributor 5'],
-        },
-        {
-          title: 'Application in aerospace systems.',
-          contributors: ['Contributor 6'],
-        },
-      ],
-    },
-    {
       id: 6,
+      slug: 'propulsion',
       name: 'Propulsion',
       excerpt: 'Delve into propulsion systems—explore the technologies that propel aircraft forward with speed and efficiency.',
       roadmap: [
@@ -388,6 +395,7 @@ export class SubjectService {
     },
     {
       id: 7,
+      slug: 'aircraft-design',
       name: 'Aircraft Design',
       excerpt: 'Explore the principles of aircraft design—how form and function come together to create high-performance flying machines.',
       roadmap: [
@@ -458,6 +466,7 @@ export class SubjectService {
     },
     {
       id: 8,
+      slug: 'aircraft-operation',
       name: 'Aircraft Operation',
       excerpt: 'Navigate the operational aspects of aircraft—understand the protocols and procedures for safe and efficient flights.',
       roadmap: [
@@ -531,6 +540,7 @@ export class SubjectService {
     },
     {
       id: 9,
+      slug: 'aircraft-maintenance',
       name: 'Aircraft Maintenance',
       excerpt: 'Discover the critical world of aircraft maintenance—learn about the meticulous care needed to keep flying machines in top condition.',
       roadmap: [
@@ -601,6 +611,7 @@ export class SubjectService {
     },
     {
       id: 10,
+      slug: 'astrodynamics',
       name: 'Astrodynamics',
       excerpt: 'Journey into astrodynamics—understand the principles governing the precise trajectories of spacecraft exploring the cosmos.',
       roadmap: [
@@ -680,7 +691,10 @@ export class SubjectService {
   }
 
   getSubjectByName(name: string): Subject | undefined {
-    console.log(name?.toLowerCase())
     return this.subjects.find((subject) => subject.name?.toLowerCase() === name?.toLowerCase());
+  }
+
+  getSubjectBySlug(slug: string): Subject | undefined {
+    return this.subjects.find((subject) => subject.slug?.toLowerCase() === slug?.toLowerCase());
   }
 }

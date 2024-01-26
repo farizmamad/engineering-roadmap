@@ -2,6 +2,6 @@
   <div *ngFor="let subject of subjects" class="subject-card">
     <h2>{{ subject.name }}</h2>
     <p>{{ subject.excerpt }}</p>
-    <a routerLink="/roadmap/{{ subject.name.toLowerCase() }}">View Roadmap</a>
+    <a routerLink="/roadmap/{{ subject.slug.toLowerCase() }}">View Roadmap</a>
   </div>
 </div>
