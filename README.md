@@ -1,34 +1,40 @@
-# aerospace-engineering-roadmap
-Walkthrough the learning path of aerospace subjects.
+# Welcome to Remix!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+- 📖 [Remix docs](https://remix.run/docs)
 
-You can contribute and test your changes by following this steps.
+## Development
 
-## Install Angular CLI globally
+Run the dev server:
 
-Run `npm install -g @angular/cli` to install `ng` command in your command line.
+```shellscript
+npm run dev
+```
 
-## Development server
+## Deployment
 
-Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+First, build your app for production:
 
-## Code scaffolding
+```sh
+npm run build
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use ng generate directive|pipe|service|class|guard|interface|enum|module.
+Then run the app in production mode:
 
-## Build
+```sh
+npm start
+```
 
-Run `ng build:docs` to build the project. The build artifacts will be stored in the docs/ directory.
+Now you'll need to pick a host to deploy it to.
 
-## Running unit tests
+### DIY
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
 
-## Running end-to-end tests
+Make sure to deploy the output of `npm run build`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- `build/server`
+- `build/client`
 
-## Further help
+## Styling
 
-To get more help on the Angular CLI use ng help or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
