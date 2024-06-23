@@ -7,7 +7,7 @@ import {
 } from "@remix-run/react";
 import "./tailwind.css";
 import MainNavigation from "~/components/MainNavigation";
-import styles from '~/styles/main.css';
+import '~/styles/main.css';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -34,8 +34,8 @@ export default function App() {
   return <Outlet />;
 }
 
-export function links() {
-  return [
-    { rel: "stylesheet", href: styles },
-  ];
-}
+// export function links() {
+//   return [
+//     { rel: "stylesheet", href: styles },
+//   ];
+// }

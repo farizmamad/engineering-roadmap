@@ -1,4 +1,4 @@
-import styles from './KPRForm.css';
+import './KPRForm.css';
 
 export default function KPRForm() {
   return (
@@ -20,10 +20,4 @@ export default function KPRForm() {
       </div>
     </form>
   )
-}
-
-export function links() {
-  return [
-    { rel: 'stylesheet', ref: styles },
-  ];
 }

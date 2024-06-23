@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
-import homeStyles from "~/styles/home.css";
+import "~/styles/home.css";
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,17 +17,11 @@ export default function Index() {
         <Link to="/kpr">KPR</Link>
       </p>
       <p id="cta">
-        <Link to="/kehamilan">kehamilan</Link>
+        <Link to="/renovasi">Renovasi</Link>
       </p>
       <p id="cta">
-        <Link to="/renovasi">Renovasi</Link>
+        <Link to="/kehamilan">Kehamilan</Link>
       </p>
     </main>
   );
-}
-
-export function links() {
-  return [
-    { rel: "stylesheet", href: homeStyles },
-  ];
 }

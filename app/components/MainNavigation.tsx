@@ -8,10 +8,7 @@ export default function MainNavigation() {
           <NavLink to="/">Beranda</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/program">Program Studi</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink to="/ask">Tanya Saintek</NavLink>
+          <a href="https://github.com/farizmamad">Sumber Kode</a>
         </li>
       </ul>
     </nav>

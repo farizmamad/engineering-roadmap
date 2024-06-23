@@ -1,4 +1,4 @@
-import KPRForm, { links as kprFormLinks } from '~/components/KPRForm';
+import KPRForm from '~/components/KPRForm';
 
 export default function KPRPage() {
   return (
@@ -8,6 +8,7 @@ export default function KPRPage() {
   );
 }
 
-export function links() {
-  return [...kprFormLinks()];
+export function action() {
+  console.log('kpr action');
+  return null;
 }
