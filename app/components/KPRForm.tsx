@@ -1,8 +1,11 @@
+import { Form, useNavigation } from '@remix-run/react';
 import './KPRForm.css';
 
 export default function KPRForm() {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
   return (
-    <form method="post" id="kpr-form">
+    <Form method="post" id="kpr-form">
       <p>
         <label htmlFor="kpr-price">Harga Rumah (Rupiah)</label>
         <input type="number" id="kpr-price" name="kpr-price"/>
@@ -16,8 +19,10 @@ export default function KPRForm() {
         <input type="number" step="0.01" id="kpr-margin" name="kpr-margin"/>
       </p>
       <div className="form-actions">
-        <button>Simulasikan</button>
+        <button disabled={isSubmitting}>
+          {isSubmitting ? 'Sedang menghitung...' : 'Hitung'}
+        </button>
       </div>
-    </form>
+    </Form>
   )
 }

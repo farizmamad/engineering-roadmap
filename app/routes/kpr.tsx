@@ -1,4 +1,4 @@
-import { json, redirect, useLoaderData } from '@remix-run/react';
+import { redirect, useLoaderData } from '@remix-run/react';
 import KPRForm from '~/components/KPRForm';
 import KPRResult from '~/components/KPRResult';
 import { getStoredKpr, KPRData, storeKPR } from '~/data/kpr';
@@ -7,6 +7,7 @@ export default function KPRPage() {
   const kpr = useLoaderData<typeof loader>();
   return (
     <main>
+      <h1>Simulasi KPR</h1>
       <KPRForm />
       <KPRResult kpr={kpr} />
     </main>
@@ -29,5 +30,6 @@ export async function action({ request }: { request: any }) {
   const existingKPR = (await getStoredKpr()) ?? [];
   const updatedKPR = existingKPR.concat(kprData);
   await storeKPR(updatedKPR);
+  await new Promise((resolve, reject) => setTimeout(() => resolve(null), 2000))
   return redirect('/kpr');
 }
