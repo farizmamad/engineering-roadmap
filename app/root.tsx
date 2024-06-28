@@ -3,6 +3,7 @@ import {
   Link,
   Links,
   Meta,
+  MetaDescriptor,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -16,8 +17,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
@@ -75,3 +74,15 @@ export function ErrorBoundary() {
 //     { rel: "stylesheet", href: styles },
 //   ];
 // }
+
+export function meta(): MetaDescriptor[] {
+  return [
+    {
+      title: 'Kalkulator Finansial',
+    },
+    {
+      name: 'description',
+      content: 'hitung keperluan anda sekarang juga.'
+    }
+  ];
+}
