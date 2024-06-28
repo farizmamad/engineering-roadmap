@@ -1,6 +1,7 @@
-import { redirect, useLoaderData } from '@remix-run/react';
+import { isRouteErrorResponse, json, Links, Meta, redirect, Scripts, ScrollRestoration, useLoaderData, useRouteError } from '@remix-run/react';
 import KPRForm from '~/components/KPRForm';
 import KPRResult from '~/components/KPRResult';
+import MainNavigation from '~/components/MainNavigation';
 import { getStoredKpr, KPRData, storeKPR } from '~/data/kpr';
 
 export default function KPRPage() {
@@ -18,6 +19,7 @@ export default function KPRPage() {
 
 // reserved functions
 export async function loader() {
+  // throw new Response('Could not find any KPR data', { status: 404, statusText: 'Not Found'});
   const kpr = await getStoredKpr();
   return kpr;
 }
