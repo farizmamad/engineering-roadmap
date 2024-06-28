@@ -1,11 +1,19 @@
-import { Form, useNavigation } from '@remix-run/react';
+import { Form, useActionData, useNavigation } from '@remix-run/react';
 import './KPRForm.css';
 
+type ActionData = { message: string };
+
 export default function KPRForm() {
+  // hooks
   const navigation = useNavigation();
+  const actionData = useActionData<ActionData>();
+
+  // flags
   const isSubmitting = navigation.state === 'submitting';
+  
   return (
     <Form method="post" id="kpr-form">
+      {actionData?.message && <p>{actionData.message}</p>}
       <p>
         <label htmlFor="kpr-price">Harga Rumah (Rupiah)</label>
         <input type="number" id="kpr-price" name="kpr-price"/>
