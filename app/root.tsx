@@ -1,5 +1,6 @@
 import {
   isRouteErrorResponse,
+  Link,
   Links,
   Meta,
   Outlet,
@@ -46,6 +47,7 @@ export function ErrorBoundary() {
           {error.status} {error.statusText}
         </h1>
         <p className="info-message">{error.data}</p>
+        <Link to='/'>Go Back</Link>
       </main>
     );
   } else if (error instanceof Error) {
@@ -55,10 +57,16 @@ export function ErrorBoundary() {
         <p className="info-message">{error.message}</p>
         <p>The stack trace is:</p>
         <pre>{error.stack}</pre>
+        <Link to='/'>Go Back</Link>
       </main>
     );
   } else {
-    return <h1>Unknown Error</h1>;
+    return (
+      <main>
+        <h1>Unknown Error</h1>
+        <Link to='/'>Go Back</Link>
+      </main>
+    );
   }
 }
 
