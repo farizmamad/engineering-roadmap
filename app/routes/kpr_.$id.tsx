@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, MetaDescriptor, useLoaderData } from "@remix-run/react";
 import { getStoredKpr, KPRData } from "~/data/kpr";
 import '~/styles/kpr-details.css';
 
@@ -24,4 +24,16 @@ export async function loader({ params }: LoaderFunctionArgs) {
   const selectedKPR = allKPR.find((data) => data.id === kprId);
   if (selectedKPR) return selectedKPR;
   throw new Response('Could not find the KPR details. Try another one.', { status: 404, statusText: 'Not Found' });
+}
+
+export function meta({data}: {data: KPRData}): MetaDescriptor[] {
+  return [
+    {
+      title: data.price ?? 'Simulasi KPR',
+    },
+    {
+      name: 'description',
+      content: 'Lihat cicilan berdasarkan tenor yang anda pilih.'
+    }
+  ];
 }
