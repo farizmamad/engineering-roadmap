@@ -1,7 +1,6 @@
-import { isRouteErrorResponse, json, Links, Meta, redirect, Scripts, ScrollRestoration, useLoaderData, useRouteError } from '@remix-run/react';
+import { redirect, useLoaderData } from '@remix-run/react';
 import KPRForm from '~/components/KPRForm';
 import KPRResult from '~/components/KPRResult';
-import MainNavigation from '~/components/MainNavigation';
 import { getStoredKpr, KPRData, storeKPR } from '~/data/kpr';
 
 export default function KPRPage() {
