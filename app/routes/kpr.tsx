@@ -35,13 +35,13 @@ export async function action({ request }: { request: any }) {
   };
 
   // simulate to 1% of sell price
-  kprData.notaryFees = kprData.buyPrice * (10 / 100);
+  kprData.notaryFees = Math.round(kprData.buyPrice * (1 / 100));
   // simulate to 1% of sell price
-  kprData.insuranceFees = kprData.buyPrice * (10 / 100);
+  kprData.insuranceFees = Math.round(kprData.buyPrice * (1 / 100));
 
   for (const tenure of tenures) {
-    const futurePrice = kprData.buyPrice * Math.pow((1 + (kprData.margin / 100)), tenure);
-    const installment = futurePrice / (tenure * 12);
+    const futurePrice = Math.round((kprData.buyPrice - kprData.downPayment) * Math.pow((1 + (kprData.margin / 100)), tenure));
+    const installment = Math.round(futurePrice / (tenure * 12));
 
     kprData.calculation.push({
       tenure,

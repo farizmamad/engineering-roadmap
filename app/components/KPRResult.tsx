@@ -24,10 +24,10 @@ export default function KPRResult({ kpr }: { kpr: KPRData[] }) {
                     </time>
                   </li>
                 </ul>
-                <h2>Harga Beli: {data.buyPrice}</h2>
+                <h2>Harga Beli: {data.buyPrice.toLocaleString()}</h2>
               </header>
-              <p>{data.downPayment}</p>
-              <p>{data.margin}</p>
+              <p>DP: {data.downPayment.toLocaleString()}</p>
+              <p>Margin per tahun: {`${data.margin}%`}</p>
             </article>
           </Link>
         </li>

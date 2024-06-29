@@ -17,8 +17,8 @@ export default function KPRDetailsPage() {
     return {
       id: index,
       tenure: kprData.tenure,
-      futurePrice: kprData.futurePrice,
-      installment: kprData.installment,
+      futurePrice: kprData.futurePrice.toLocaleString(),
+      installment: kprData.installment.toLocaleString(),
     };
   });
 
@@ -27,14 +27,14 @@ export default function KPRDetailsPage() {
       <nav>
         <Link to="/kpr">Back to all KPR</Link>
       </nav>
-      <h1>Harga Beli: {data.buyPrice}</h1>
+      <h1>Harga Beli: {data.buyPrice.toLocaleString()}</h1>
     </header>
-    <p id='kpr-details-content'>DP: {data.downPayment}</p>
-    <p id='kpr-details-content'>Margin: {data.margin}</p>
-    <p id='kpr-details-content'>Biaya Notaris: {data.notaryFees ?? '?'}</p>
-    <p id='kpr-details-content'>Asuransi: {data.insuranceFees ?? '-'}</p>
+    <p id='kpr-details-content'>DP: {data.downPayment.toLocaleString()}</p>
+    <p id='kpr-details-content'>Margin: {data.margin.toLocaleString()}</p>
+    <p id='kpr-details-content'>Biaya Notaris: {data.notaryFees?.toLocaleString() ?? '?'}</p>
+    <p id='kpr-details-content'>Asuransi: {data.insuranceFees?.toLocaleString() ?? '-'}</p>
     <section id="DataGrid" style={{ height: 350, width: '50%', marginLeft: 'auto', marginRight: 'auto' }}>
-      <DataGrid rows={rows} columns={columns} sx={{backgroundColor: "#caffca"}}/>
+      <DataGrid rows={rows} columns={columns} sx={{backgroundColor: "#caffca"}} hideFooter={true}/>
     </section>
   </main>
 }
