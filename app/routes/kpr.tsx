@@ -1,7 +1,7 @@
 import { MetaDescriptor, redirect, useLoaderData } from '@remix-run/react';
 import KPRForm from '~/components/KPRForm';
 import KPRResult from '~/components/KPRResult';
-import { getStoredKpr, KPRData, storeKPR } from '~/data/kpr';
+import { getStoredKpr, KPRData, storeKPR, tenures } from '~/data/kpr';
 
 export default function KPRPage() {
   // hooks
@@ -28,19 +28,35 @@ export async function action({ request }: { request: any }) {
   const formData = await request?.formData();
   const kprData: KPRData = {
     id: new Date().toISOString(),
-    price: parseFloat(formData?.get('kpr-price')),
-    dp: parseFloat(formData?.get('kpr-dp')),
+    buyPrice: parseFloat(formData?.get('kpr-price')),
+    downPayment: parseFloat(formData?.get('kpr-dp')),
     margin: parseFloat(formData?.get('kpr-margin')),
+    calculation: [],
   };
 
-  if (isNaN(kprData.price) || kprData.price < 100000000) {
-    return { message: 'Harga tidak valid. Minimal Rp. 100 Juta' };
+  // simulate to 1% of sell price
+  kprData.notaryFees = kprData.buyPrice * (10 / 100);
+  // simulate to 1% of sell price
+  kprData.insuranceFees = kprData.buyPrice * (10 / 100);
+
+  for (const tenure of tenures) {
+    const futurePrice = kprData.buyPrice * Math.pow((1 + (kprData.margin / 100)), tenure);
+    const installment = futurePrice / (tenure * 12);
+
+    kprData.calculation.push({
+      tenure,
+      futurePrice,
+      installment,
+    });
+  }
+
+  if (isNaN(kprData.buyPrice) || kprData.buyPrice < 10000000) {
+    return { message: 'Harga tidak valid. Minimal Rp. 10 Juta' };
   }
 
   const existingKPR = (await getStoredKpr()) ?? [];
   const updatedKPR = existingKPR.concat(kprData);
   await storeKPR(updatedKPR);
-  await new Promise((resolve, reject) => setTimeout(() => resolve(null), 2000))
   return redirect('/kpr');
 }
 

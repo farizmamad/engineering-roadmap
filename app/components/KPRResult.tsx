@@ -24,9 +24,9 @@ export default function KPRResult({ kpr }: { kpr: KPRData[] }) {
                     </time>
                   </li>
                 </ul>
-                <h2>Harga: {data.price}</h2>
+                <h2>Harga Beli: {data.buyPrice}</h2>
               </header>
-              <p>{data.dp}</p>
+              <p>{data.downPayment}</p>
               <p>{data.margin}</p>
             </article>
           </Link>

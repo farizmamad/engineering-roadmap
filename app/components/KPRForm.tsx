@@ -15,7 +15,7 @@ export default function KPRForm() {
     <Form method="post" id="kpr-form">
       {actionData?.message && <p>{actionData.message}</p>}
       <p>
-        <label htmlFor="kpr-price">Harga Rumah (Rupiah)</label>
+        <label htmlFor="kpr-price">Harga Beli (Rupiah)</label>
         <input type="number" id="kpr-price" name="kpr-price"/>
       </p>
       <p>

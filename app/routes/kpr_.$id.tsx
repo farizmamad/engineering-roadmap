@@ -1,3 +1,4 @@
+import { DataGrid } from "@mui/x-data-grid";
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { Link, MetaDescriptor, useLoaderData } from "@remix-run/react";
 import { getStoredKpr, KPRData } from "~/data/kpr";
@@ -6,15 +7,35 @@ import '~/styles/kpr-details.css';
 export default function KPRDetailsPage() {
   const data = useLoaderData<KPRData>();
 
+  const columns = [
+    {field: 'tenure', headerName: 'Tenor', flex: 1},
+    {field: 'futurePrice', headerName: 'Harga di masa depan', flex: 1},
+    {field: 'installment', headerName: 'Cicilan per bulan (flat)', flex: 1},
+  ];
+
+  const rows = data.calculation.map((kprData, index) => {
+    return {
+      id: index,
+      tenure: kprData.tenure,
+      futurePrice: kprData.futurePrice,
+      installment: kprData.installment,
+    };
+  });
+
   return <main id='kpr-details'>
     <header>
       <nav>
         <Link to="/kpr">Back to all KPR</Link>
       </nav>
-      <h1>Harga: {data.price}</h1>
+      <h1>Harga Beli: {data.buyPrice}</h1>
     </header>
-    <p id='kpr-details-content'>DP: {data.dp}</p>
+    <p id='kpr-details-content'>DP: {data.downPayment}</p>
     <p id='kpr-details-content'>Margin: {data.margin}</p>
+    <p id='kpr-details-content'>Biaya Notaris: {data.notaryFees ?? '?'}</p>
+    <p id='kpr-details-content'>Asuransi: {data.insuranceFees ?? '-'}</p>
+    <section id="DataGrid" style={{ height: 350, width: '50%', marginLeft: 'auto', marginRight: 'auto' }}>
+      <DataGrid rows={rows} columns={columns} sx={{backgroundColor: "#caffca"}}/>
+    </section>
   </main>
 }
 
@@ -29,7 +50,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 export function meta({data}: {data: KPRData}): MetaDescriptor[] {
   return [
     {
-      title: data.price ?? 'Simulasi KPR',
+      title: data.buyPrice ?? 'Simulasi KPR',
     },
     {
       name: 'description',
