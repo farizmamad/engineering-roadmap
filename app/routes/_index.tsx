@@ -12,7 +12,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <main id="content">
-      <h1>Berbagai program perhitungan masalah keuangan</h1>
+      <h1>Berbagai program perhitungan keuangan</h1>
       <p id="cta">
         <Link to="/kpr">KPR</Link>
       </p>
