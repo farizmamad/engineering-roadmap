@@ -22,6 +22,8 @@ export default function KPRDetailsPage() {
     };
   });
 
+  const firstPayment = data.downPayment + (data.notaryFees ?? 0) + (data.insuranceFees ?? 0);
+
   return <main id='kpr-details'>
     <header>
       <nav>
@@ -29,10 +31,13 @@ export default function KPRDetailsPage() {
       </nav>
       <h1>Harga Beli: {data.buyPrice.toLocaleString()}</h1>
     </header>
-    <p id='kpr-details-content'>DP: {data.downPayment.toLocaleString()}</p>
     <p id='kpr-details-content'>Margin: {data.margin.toLocaleString()}</p>
+    <p id='kpr-details-content'>DP: {data.downPayment.toLocaleString()}</p>
     <p id='kpr-details-content'>Biaya Notaris: {data.notaryFees?.toLocaleString() ?? '?'}</p>
     <p id='kpr-details-content'>Asuransi: {data.insuranceFees?.toLocaleString() ?? '-'}</p>
+    
+    <h1>Pembayaran saat akad: {firstPayment.toLocaleString()}</h1>
+
     <section id="DataGrid" style={{ height: 350, width: '50%', marginLeft: 'auto', marginRight: 'auto' }}>
       <DataGrid rows={rows} columns={columns} sx={{backgroundColor: "#caffca"}} hideFooter={true}/>
     </section>
