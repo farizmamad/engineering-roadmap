@@ -8,7 +8,7 @@ export default function MainNavigation() {
           <NavLink to="/">Beranda</NavLink>
         </li>
         <li className="nav-item">
-          <a href="https://github.com/farizmamad">Sumber Kode</a>
+          <a href="https://github.com/farizmamad/simulasi-kpr">Sumber Kode</a>
         </li>
       </ul>
     </nav>

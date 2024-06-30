@@ -1,22 +1,20 @@
 import * as fs from 'fs/promises';
+import { KPRInput } from './kprInput';
 
 export const tenures = [5, 10, 15, 20, 25] as const;
 
 export type KPRCalculation = {
   /** tenure in year */
   tenure: typeof tenures[number],
-  futurePrice: number,
+  sellPrice: number | string,
+  margin: number | string,
+  installmentDeferred: number,
   /** installment per month */
-  installment: number,
+  installment: number | string,
 };
 
-export type KPRData = {
+export type KPRData = KPRInput & {
   id?: string,
-  /** sell price */
-  buyPrice: number,
-  downPayment: number,
-  /** margin per year */
-  margin: number,
   /** One time payment notary fees */
   notaryFees?: number,
   /** One time payment catastrophic insurance */

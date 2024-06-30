@@ -3,16 +3,16 @@
 }
 
 :root {
-  --color-primary-10: #e7cffe;
-  --color-primary-50: #dcbcfb;
-  --color-primary-100: #ca97fc;
-  --color-primary-200: #b779f4;
-  --color-primary-300: #a85ff0;
-  --color-primary-400: #8f42dd;
-  --color-primary-500: #8d34e6;
-  --color-primary-600: #8021e0;
-  --color-primary-700: #690fc3;
-  --color-primary-800: #4e0596;
+  --color-primary-10: #cfeefe;
+  --color-primary-50: #bce5fb;
+  --color-primary-100: #97d7fc;
+  --color-primary-200: #79c7f4;
+  --color-primary-300: #5fc2f0;
+  --color-primary-400: #42b9dd;
+  --color-primary-500: #349fe6;
+  --color-primary-600: #21a0e0;
+  --color-primary-700: #0f72c3;
+  --color-primary-800: #058796;
 
   --color-secondary-50: hsl(24, 93%, 83%);
   --color-secondary-100: hsl(24, 91%, 75%);
@@ -57,7 +57,7 @@ h1 {
   font-size: xx-large;
   font-weight: 700;
   text-align: center;
-  color: var(--color-primary-10);
+  color: black;
 }
 
 .nav-item a {
@@ -67,7 +67,7 @@ h1 {
 
 .nav-item a:hover,
 .nav-item a.active {
-  color: var(--color-secondary-200);
+  color: black;
 }
 
 .error {

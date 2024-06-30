@@ -78,11 +78,11 @@ export function ErrorBoundary() {
 export function meta(): MetaDescriptor[] {
   return [
     {
-      title: 'Kalkulator Finansial',
+      title: 'Simulasi KPR',
     },
     {
       name: 'description',
-      content: 'hitung keperluan anda sekarang juga.'
+      content: 'Lihat cicilan berdasarkan tenor yang anda pilih.'
     }
   ];
 }

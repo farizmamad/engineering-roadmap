@@ -19,12 +19,12 @@ export default function KPRForm() {
         <input type="number" id="kpr-price" name="kpr-price"/>
       </p>
       <p>
-        <label htmlFor="kpr-dp">DP yang anda siapkan (Rupiah)</label>
-        <input type="number" id="kpr-dp" name="kpr-dp"/>
-      </p>
-      <p>
         <label htmlFor="kpr-margin">Margin per tahun (%)</label>
         <input type="number" step="0.01" id="kpr-margin" name="kpr-margin"/>
+      </p>
+      <p>
+        <label htmlFor="kpr-dp">Uang Muka (Rupiah)</label>
+        <input type="number" id="kpr-dp" name="kpr-dp"/>
       </p>
       <div className="form-actions">
         <button disabled={isSubmitting}>
