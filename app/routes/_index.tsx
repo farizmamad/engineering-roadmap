@@ -16,12 +16,12 @@ export default function Index() {
       <p id="cta">
         <Link to="/kpr">KPR</Link>
       </p>
-      <p id="cta">
+      {/* <p id="cta">
         <Link to="/renovasi">Renovasi</Link>
       </p>
       <p id="cta">
         <Link to="/kehamilan">Kehamilan</Link>
-      </p>
+      </p> */}
     </main>
   );
 }
