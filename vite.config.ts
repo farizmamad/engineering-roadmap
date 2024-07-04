@@ -3,8 +3,10 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  base: '/simulasi-kpr/',
   plugins: [
     remix({
+      basename: '/simulasi-kpr/',
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
